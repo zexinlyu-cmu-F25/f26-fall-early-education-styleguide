@@ -4,7 +4,7 @@ Usage: python3 tools/build_offline.py [folder containing index.html]
 No dependencies, browser automation, network or build service required.
 """
 from pathlib import Path
-import base64, io, json, mimetypes, re, sys, zipfile
+import base64, hashlib, io, json, mimetypes, re, sys, zipfile
 
 root = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
 assert (root / 'index.html').exists(), 'Run from the project or pass its asset folder.'
@@ -48,8 +48,14 @@ def make_zip(include_offline=False):
     return buffer.getvalue()
 
 html = (root/'index.html').read_text()
-html = html.replace('<link rel="stylesheet" href="guide.css">','<style>'+inline_css(root/'guide.css')+'</style>')
-html = html.replace('<script src="guide-resources.js" defer></script><script src="guide.js" defer></script><script src="library.js" defer></script>','')
+# Keep cached scripts and styles in sync with the published page structure.
+for name in ('guide.css', 'guide-resources.js', 'guide.js', 'library.js'):
+    version = hashlib.sha256((root/name).read_bytes()).hexdigest()[:12]
+    html = re.sub(r'((?:src|href)="' + re.escape(name) + r')(?:\?[^"]*)?"',
+                  lambda m: m[1] + '?v=' + version + '"', html)
+(root/'index.html').write_text(html)
+html = re.sub(r'<link rel="stylesheet" href="guide\.css(?:\?[^"]*)?">', lambda m: '<style>'+inline_css(root/'guide.css')+'</style>', html)
+html = re.sub(r'<script src="(?:guide-resources|guide|library)\.js(?:\?[^"]*)?" defer></script>', '', html)
 html = re.sub(r'<div class="download-row" id="offline-download-row">.*?</a></div>','',html,flags=re.S)
 html = re.sub(r'src="(assets/[^\"]+)"',lambda m:'src="'+data_uri(root/m[1])+'"',html)
 html = html.replace('<title>Kiddash · Style Guide</title>','<title>Kiddash · Offline Style Guide</title>')
