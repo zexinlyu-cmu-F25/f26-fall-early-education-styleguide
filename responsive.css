@@ -1,0 +1,43 @@
+/* Kiddash · Responsive specification. Root size remains user-controlled. */
+/* Phone: under 48rem (768px at a 16px browser default).
+   4 columns / 24px margins / 12px gaps. Long content stacks and scrolls. */
+.kd-responsive-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem;padding-inline:1.5rem}
+.kd-responsive-item{grid-column:1 / -1}
+.kd-form-actions{display:flex;flex-direction:column;gap:.75rem}
+.kd-form-actions>.kd-button{width:100%}
+.kd-responsive-frame{width:100%;min-height:100dvh;padding-top:env(safe-area-inset-top)}
+.kd-responsive-nav{padding-bottom:max(.5rem,env(safe-area-inset-bottom))}
+.kd-responsive-content{min-width:0;overflow-wrap:anywhere}
+/* Tablet: 8 columns / 32px margins / 16px gaps. */
+@media(min-width:48rem){
+  .kd-responsive-grid{grid-template-columns:repeat(8,minmax(0,1fr));gap:1rem;padding-inline:2rem}
+  .kd-responsive-item{grid-column:span 4}
+  .kd-form-actions{flex-direction:row;justify-content:flex-end}
+  .kd-form-actions>.kd-button{width:auto}
+}
+/* Desktop: 12 columns / 32px minimum margins / 24px gaps.
+   This is the documentation/web adaptation, not a second mobile prototype. */
+@media(min-width:75rem){
+  .kd-responsive-grid{grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;max-width:80rem;margin-inline:auto}
+  .kd-responsive-item{grid-column:span 4}
+}
+/* Preserve readability at zoom / large text settings. */
+@media(max-width:22.5rem){
+  .kd-responsive-grid{padding-inline:1rem;gap:.5rem}
+  .kd-metrics{gap:.5rem}
+  .kd-count{padding:.75rem}
+  .kd-count strong{font-size:2rem;line-height:2.5rem}
+}
+/* Focus is always visible. Hover is an optional enhancement, never required. */
+@media(hover:hover) and (pointer:fine){
+  .kd-button:hover:not(:disabled){filter:brightness(.98)}
+  .kd-menu button:hover:not(:disabled){background:var(--kd-neutral-50)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .kd-button:active:not(:disabled){transform:none}
+}
+@media(forced-colors:active){
+  .kd-button,.kd-count,.kd-input,.kd-menu{border:1px solid ButtonText}
+  .kd-nav a[aria-current=page]{outline:2px solid Highlight}
+}
