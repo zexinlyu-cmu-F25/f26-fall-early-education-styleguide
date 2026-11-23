@@ -13,7 +13,7 @@ body{background:#f7f7f6}.toolbar{max-width:880px;margin:24px auto;display:flex;g
 <section><h2>Patterns & implementation</h2><p>Persistent navigation, progressive disclosure, contextual replies, modal confirmation, search/filter, visible feedback, direct manipulation, journey progress and source-linked summaries.</p><p>Download <code>kiddash.css</code>, <code>guide.css</code>, <code>responsive.css</code>, the official SVG and full vanilla source from the Resources page.</p><p><strong>Before submission:</strong> Cross-check the original Task 4 pattern selections. Paste this one-pager into Jama and verify the guide’s audience permissions. Task 4 mapping and Jama submission are not claimed complete.</p></section>
 </div></div><footer class="footer"><p><strong>Interactive guide:</strong> <a id="guide-url" href="index.html">Kiddash Style Guide</a><br><strong>Pattern reference:</strong> <a href="https://ui-patterns.com/patterns">ui-patterns.com/patterns</a></p></footer></article><script>
 document.getElementById('print').onclick=()=>window.print();
-const guideURL = new URL('index.html',location.href).href;
+const guideURL = 'https://zexinlyu-cmu-f25.github.io/f26-fall-early-education-styleguide/';
 document.getElementById('guide-url').href=guideURL;document.getElementById('guide-url').textContent=guideURL;
 document.getElementById('copy').onclick=async()=>{const text=document.getElementById('overview-content').innerText;try{await navigator.clipboard.writeText(text);document.getElementById('copy-status').textContent='Copied. Paste into Jama.';}catch{document.getElementById('copy-status').textContent='Select the overview text and copy it into Jama.';}};
 </script></body></html>

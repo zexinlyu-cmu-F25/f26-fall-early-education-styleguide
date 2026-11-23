@@ -2,6 +2,8 @@
 
 A vanilla HTML, CSS and JavaScript style guide for a calmer school pickup experience. No framework, package install, account, camera or location permission is needed to use the examples.
 
+**Online guide:** https://zexinlyu-cmu-f25.github.io/f26-fall-early-education-styleguide/
+
 ## Open on your own computer
 
 **Easiest: download one file.**
