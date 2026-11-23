@@ -9,7 +9,7 @@ const groups = [
  ['Documentation', ['overview','branding']],
  ['Foundations', ['colors','typography','layout']],
  ['Components', ['icons','navigation','buttons','forms','menus','dialogs','lists','messages','verification','arrival','location']],
- ['Guidelines', ['patterns','responsive','library']],
+ ['Guidelines', ['patterns','responsive']],
  ['Resources', ['downloads']]
 ];
 $('#guide-nav').innerHTML = groups.map(([label, ids]) => `<div class="nav-group"><div class="nav-label">${label}</div>${ids.map(id => `<a href="#${id}">${esc($('#'+id).dataset.title)}</a>`).join('')}</div>`).join('');

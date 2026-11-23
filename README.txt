@@ -15,5 +15,5 @@ Optional local preview:
 Regenerate offline files after source edits:
   python3 tools/build_offline.py
 
-See README.md for file responsibilities, component coverage, verification
+See README.md for file responsibilities, verification
 scope, source-asset attribution and outstanding submission requirements.

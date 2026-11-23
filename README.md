@@ -9,7 +9,7 @@ Internal reference for the UX and Engineering team. The guide contains reusable 
 - **Foundations:** branding, colors, typography, layout and spacing.
 - **UI components:** icons, navigation bars, buttons, counts, forms, search inputs, menus, dialogs, lists and messages.
 - **Domain components:** scanner surfaces, guardian pairs, pickup passes, approaching responses, arrival status, journey scenes, search results and campus selection surfaces.
-- **Guidelines:** interaction patterns, responsive CSS and Figma component coverage.
+- **Guidelines:** interaction patterns and responsive CSS.
 - **Resources:** shared CSS, original logo, source ZIP, offline HTML and the one-page Jama summary.
 
 Each component page provides standalone specimens, specifications, state behavior and a CSS reference. State controls affect the individual specimen only. Application navigation, roster updates and complete pickup journeys are intentionally excluded.
@@ -31,7 +31,7 @@ The standalone export embeds fonts, icons, logo, styles, scripts and downloadabl
 | `guide.css` | Documentation shell and specimen layouts |
 | `responsive.css` | Breakpoints, safe areas and accessibility overrides |
 | `guide.js` | Routing, basic component examples and CSS references |
-| `library.js` | Component state specimens and Figma coverage mapping |
+| `library.js` | Component state specimens |
 | `component-audit.json` | Source library inventory, audited 23 Nov 2026 |
 | `guide-resources.js` | Generated CSS text; no runtime fetch |
 | `overview.html` | Printable one-page summary and Copy for Jama |
@@ -64,9 +64,9 @@ Open `http://localhost:8080`. The generated offline HTML and ZIP should be commi
 
 These contracts describe the consuming application. The documentation contains component-scoped state previews, not connected school services.
 
-## Coverage and submission status
+## Assets and submission status
 
-The Figma inventory contains 71 top-level items, including review boards. The coverage page distinguishes rendered components, web adaptations, partial asset coverage and retired designs. Four portrait assets still use initials. Two source route graphics are represented by a simplified journey illustration. The old expandable inline scanner is retired.
+Four portrait assets still use initials. Two source route graphics are represented by a simplified journey illustration. The old expandable inline scanner is retired.
 
 The supplied logo is unchanged. The new rounded SVG icon set is used in this web guide; the Figma file was not modified. Nunito Sans is distributed under the SIL Open Font License (`assets/OFL.txt`).
 
