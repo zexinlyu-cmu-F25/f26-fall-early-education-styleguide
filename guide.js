@@ -6,8 +6,9 @@ const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&
 const asset = name => window.KIDDASH_ASSETS?.[name] || 'assets/'+name;
 const icon = name => `<img class="kd-icon" src="${asset('icon-'+name+'.svg')}" alt="">`;
 const groups = [
- ['Foundations', ['overview','brand','colors','typography','layout']],
- ['Components', ['buttons','forms','menus','dialogs','lists','icons']],
+ ['Start here', ['overview','branding']],
+ ['Foundations', ['colors','typography','layout']],
+ ['Components', ['icons','navigation','buttons','forms','menus','dialogs','lists','states','library']],
  ['Behavior', ['patterns','pickup','parent','map','messages']],
  ['Handoff', ['responsive','downloads']]
 ];
@@ -16,13 +17,14 @@ const mobileQuery = matchMedia('(max-width:767px)');
 function closeNavigation() { $('#sidebar').classList.remove('open'); $('#sidebar').inert=mobileQuery.matches; $('#mobile-menu').setAttribute('aria-expanded','false'); }
 mobileQuery.addEventListener('change',closeNavigation);
 function route() {
- const id = location.hash.slice(1) || 'overview';
+ const requested = location.hash.slice(1) || 'overview';
+ const id = requested === 'brand' ? 'branding' : requested;
  if (id === 'main') { $('#main').focus(); return; }
  const page = $('.page#'+CSS.escape(id)) || $('#overview');
  $$('.page').forEach(p => { p.hidden = p !== page; });
  $$('#guide-nav a').forEach(a => a.hash === '#'+page.id ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
  document.title = `${page.dataset.title} · Kiddash Style Guide`;
- closeNavigation(); window.scrollTo(0,0);
+ closeNavigation(); window.scrollTo({top:0,behavior:'instant'});
 }
 addEventListener('hashchange', () => { route(); $('#main').focus({preventScroll:true}); }); route();
 $('#mobile-menu').addEventListener('click', () => { const open = $('#sidebar').classList.toggle('open'); $('#sidebar').inert=!open&&mobileQuery.matches; $('#mobile-menu').setAttribute('aria-expanded',String(open)); if (open) $('#guide-nav a').focus(); });
@@ -66,7 +68,7 @@ $('#type-input').addEventListener('input',updateType); $('#type-reset').addEvent
 $('#grid-toggle').addEventListener('change', e => {$('#layout-grid').hidden = !e.target.checked;});
 $('#padding-select').addEventListener('change', e => {$('#padding-demo').style.padding = e.target.value+'px';$('#padding-label').textContent = e.target.value+' px';});
 $('#space-scale').innerHTML = [4,8,12,16,20,24,32,40,48,56,64].map(n => `<div class="space-row"><span>${n} px</span><i style="width:${n*3}px"></i><code>--kd-space-${n}</code></div>`).join('');
-const icons = ['scan','map','pickup','chat','alerts','search','back','check','close','pin','history','qr'];
+const icons = ['scan','map','pickup','chat','alerts','search','back','check','close','pin','history','qr','arrow','menu'];
 $('#icon-gallery').innerHTML = icons.map(name => `<a class="icon-cell" href="${asset('icon-'+name+'.svg')}" download="kiddash-${name}.svg" aria-label="Download ${name} icon">${icon(name)}<span>${name}</span></a>`).join('');
 $$('.kd-table').forEach(table => {if(table.parentElement.classList.contains('kd-table-wrap'))return;const wrap=document.createElement('div');wrap.className='kd-table-wrap';wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label',(table.querySelector('caption')?.textContent||'Reference table')+'; scroll horizontally on small screens');table.before(wrap);wrap.append(table);});
 
@@ -85,10 +87,10 @@ menuTrigger.addEventListener('keydown',e=>{if(['ArrowDown','ArrowUp'].includes(e
 $$('[data-grade]',menu).forEach(b=>b.addEventListener('click',()=>{$$('[data-grade]',menu).forEach(x=>{x.setAttribute('aria-checked',String(x===b));x.innerHTML=esc(x.dataset.grade)+(x===b?icon('check'):'<span></span>');});menuTrigger.textContent=b.dataset.grade;closeMenu();toast(b.dataset.grade+' selected.');}));
 menu.addEventListener('keydown',e=>{const options=$$('[data-grade]',menu),i=options.indexOf(document.activeElement);if(e.key==='Escape'){e.preventDefault();closeMenu();}if(e.key==='Tab'){closeMenu(false);}if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();options[e.key==='Home'?0:e.key==='End'?options.length-1:(i+(e.key==='ArrowDown'?1:-1)+options.length)%options.length].focus();}});
 document.addEventListener('click',e=>{if(!menu.hidden&&!e.target.closest('.menu-preview'))closeMenu(false);});
-$$('.nav-example a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();$$('a',a.closest('nav')).forEach(x=>x.removeAttribute('aria-current'));a.setAttribute('aria-current','page');toast(a.textContent.trim()+' navigation selected.');}));
+
 
 const patterns = [
- ['Persistent navigation','Keep the primary destinations visible.','Teacher: Map, Pickup, Chat, Alerts. Parent: Pickup, Chat, My code. Selected destinations use a marker and weight.','menus'],
+ ['Persistent navigation','Keep the primary destinations visible.','Teacher: Map, Pickup, Chat, Alerts. Parent: Pickup, Chat, My code. Selected destinations use color, a soft shape and weight.','navigation'],
  ['Progressive disclosure','Show what needs action before the full roster.','Attention is the default list. Count controls reveal Remaining or Picked up without making the teacher remember hidden children.','pickup'],
  ['Contextual replies','Keep the message attached to the child.','A full-width message opens the reply dialog. The child’s name stays in the title; the whole surface is tappable.','lists'],
  ['Modal confirmation','Reserve a focused pause for a consequential action.','Keep trip active is the safe first action. Escape and Close dismiss the dialog and return focus.','dialogs'],
@@ -190,10 +192,16 @@ function updateViewport(width){width=Number(width);$('#viewport-width').value=St
 $('#viewport-width').addEventListener('input',e=>updateViewport(e.target.value));$$('[data-viewport]').forEach(b=>b.addEventListener('click',()=>updateViewport(b.dataset.viewport)));updateViewport(402);
 
 // CSS examples are extracted from the same stylesheet used by every specimen.
-const cssFamilies={brand:['.kd-logo'],colors:[':root'],typography:['.kd-type'],layout:['.kd-screen','.kd-content','.kd-stack','.kd-row'],buttons:['.kd-button','.kd-link','.kd-icon-button','.kd-count','.kd-metrics'],forms:['.kd-field','.kd-label','.kd-input','.kd-textarea','.kd-select','.kd-help','.kd-error','.kd-search','.kd-choice'],menus:['.kd-menu','.kd-nav'],dialogs:['.kd-dialog','.kd-sheet'],lists:['.kd-list','.kd-attention','.kd-avatar','.kd-chip','.kd-table','.kd-empty'],icons:['.kd-icon'],patterns:['.kd-progress','.kd-notice'],pickup:['.kd-scanner','.kd-scan-window','.kd-identity'],parent:['.kd-pass','.kd-progress'],map:['.kd-map'],messages:['.kd-message','.kd-summary']};
+const cssFamilies={brand:['.kd-logo'],colors:[':root'],typography:['.kd-type'],layout:['.kd-screen','.kd-content','.kd-stack','.kd-row'],buttons:['.kd-button','.kd-link','.kd-icon-button','.kd-count','.kd-metrics'],forms:['.kd-field','.kd-label','.kd-input','.kd-textarea','.kd-select','.kd-help','.kd-error','.kd-search','.kd-choice'],menus:['.kd-menu'],navigation:['.kd-nav','.kd-home-indicator'],states:['.kd-button','.kd-count','.kd-chip','.kd-search','.kd-response','.kd-pair','.kd-journey','.kd-arrival','.kd-open-row','.kd-message','.kd-spinner','.kd-avatar','.kd-identity'],dialogs:['.kd-dialog','.kd-sheet'],lists:['.kd-list','.kd-attention','.kd-avatar','.kd-chip','.kd-table','.kd-empty'],icons:['.kd-icon'],patterns:['.kd-progress','.kd-notice'],pickup:['.kd-scanner','.kd-scan-window','.kd-identity'],parent:['.kd-pass','.kd-progress'],map:['.kd-map'],messages:['.kd-message','.kd-summary']};
 Promise.resolve([window.KIDDASH_RESOURCES.css,window.KIDDASH_RESOURCES.responsive]).then(([css,responsive])=>{
- const rules=css.match(/[^{}]+\{[^{}]*\}/g)||[];
- $$('[data-css]').forEach(host=>{const key=host.dataset.css;const code=key==='responsive'?responsive:rules.filter(rule=>(cssFamilies[key]||[]).some(selector=>rule.trim().startsWith(selector)||rule.split('{')[0].includes(selector))).join('\n\n');const section=document.createElement('section');section.className='section';section.innerHTML=`<h2>${key==='responsive'?'responsive.css':'Component CSS'}</h2><p class="component-note">${key==='responsive'?'Complete media-query file, ready to download.':'These rules come from the shared kiddash.css used on this page. Include its root tokens and base styles when reusing components.'}</p><div class="code-panel"><div class="code-head"><span>${key==='responsive'?'responsive.css':'kiddash.css'}</span><button class="copy-code">Copy CSS</button></div><pre><code></code></pre></div>`;$('code',section).textContent=code;$('.copy-code',section).addEventListener('click',e=>copy(code,e.currentTarget));host.append(section);});
+ const sheet=new CSSStyleSheet(); sheet.replaceSync(css.replace(/@import[^;]+;/g,''));
+ const extract=(rules,selectors)=>[...rules].map(rule=>{
+  if(rule.type===CSSRule.STYLE_RULE)return selectors.some(s=>rule.selectorText.includes(s))?rule.cssText:'';
+  if(rule.type===CSSRule.KEYFRAMES_RULE)return rule.cssText;
+  if(rule.cssRules){const inner=extract(rule.cssRules,selectors);return inner?rule.cssText.slice(0,rule.cssText.indexOf('{')+1)+'\n'+inner+'\n}':'';}
+  return '';
+ }).filter(Boolean).join('\n\n');
+ $$('[data-css]').forEach(host=>{const key=host.dataset.css;const code=key==='responsive'?responsive:extract(sheet.cssRules,cssFamilies[key]||[]);const section=document.createElement('section');section.className='section';section.innerHTML=`<h2>${key==='responsive'?'responsive.css':'Component CSS'}</h2><p class="component-note">${key==='responsive'?'Complete media-query file, ready to download.':'These rules come from the shared kiddash.css used on this page. Include its root tokens and base styles when reusing components.'}</p><div class="code-panel"><div class="code-head"><span>${key==='responsive'?'responsive.css':'kiddash.css'}</span><button class="copy-code">Copy CSS</button></div><pre><code></code></pre></div>`;$('code',section).textContent=code;$('.copy-code',section).addEventListener('click',e=>copy(code,e.currentTarget));host.append(section);});
 }).catch(()=>{$$('[data-css]').forEach(host=>{host.innerHTML='<p>CSS reference unavailable. <a href="kiddash.css" download>Download the full CSS</a>.</p>';});});
 // Standalone exports embed their downloadable resources as Blob URLs.
 if(window.KIDDASH_DOWNLOADS){

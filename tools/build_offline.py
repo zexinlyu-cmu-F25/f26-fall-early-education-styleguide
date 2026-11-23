@@ -49,7 +49,7 @@ def make_zip(include_offline=False):
 
 html = (root/'index.html').read_text()
 html = html.replace('<link rel="stylesheet" href="guide.css">','<style>'+inline_css(root/'guide.css')+'</style>')
-html = html.replace('<script src="guide-resources.js" defer></script><script src="guide.js" defer></script>','')
+html = html.replace('<script src="guide-resources.js" defer></script><script src="guide.js" defer></script><script src="library.js" defer></script>','')
 html = re.sub(r'<div class="download-row" id="offline-download-row">.*?</a></div>','',html,flags=re.S)
 html = re.sub(r'src="(assets/[^\"]+)"',lambda m:'src="'+data_uri(root/m[1])+'"',html)
 html = html.replace('<title>Kiddash · Style Guide</title>','<title>Kiddash · Offline Style Guide</title>')
@@ -67,7 +67,7 @@ for name, content, mime in [
     ('kiddash-style-guide.zip',make_zip(),'application/zip'),
 ]:
     downloads[name]={'type':mime,'data':base64.b64encode(content).decode()}
-script = 'window.KIDDASH_RESOURCES='+script_json(resources)+';\nwindow.KIDDASH_ASSETS='+script_json(assets)+';\nwindow.KIDDASH_DOWNLOADS='+script_json(downloads)+';\n'+(root/'guide.js').read_text()
+script = 'window.KIDDASH_RESOURCES='+script_json(resources)+';\nwindow.KIDDASH_ASSETS='+script_json(assets)+';\nwindow.KIDDASH_DOWNLOADS='+script_json(downloads)+';\n'+(root/'guide.js').read_text()+'\n;\n'+(root/'library.js').read_text()
 html = html.replace('</body>','<script>'+script+'</script></body>')
 (root/'kiddash-style-guide-offline.html').write_text(html)
 (root/'kiddash-style-guide.zip').write_bytes(make_zip(include_offline=True))

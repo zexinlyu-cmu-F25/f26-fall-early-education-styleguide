@@ -22,6 +22,9 @@ You can also download the repository using **Code → Download ZIP**, extract th
 
 - **Foundations:** original SVG logo, Kiddash palette, actual-size typography and editable specimen text.
 - **Layout:** a reference phone canvas, four-column overlay, visible padding and spacing tokens.
+- **Branding:** a dedicated brand page with the official logo, brand personality, voice, clear space and palette context.
+- **Navigation:** complete teacher and parent bars, seven selected variants and live destination selection.
+- **Component coverage:** a dated, item-by-item audit of all 71 top-level Figma library items. Rendered, adapted, partial and retired items are distinguished explicitly.
 - **Components:** raised buttons, count selectors, fields, errors, menus, navigation, dialogs, sheets, messages, lists, icons and documentation tables.
 - **Interactions:** teacher pickup, explicit identity and handoff checks, parent sharing and manual arrival, student search and source-linked summaries.
 - **Responsive:** width simulation, phone/tablet/desktop grids and a separate downloadable `responsive.css`.
@@ -51,7 +54,9 @@ All names and events are fictional. This guide does not connect to school record
 | `kiddash-style-guide-offline.html` | Generated, fully self-contained HTML |
 | `kiddash-style-guide.zip` | Downloadable source bundle with offline HTML |
 | `tools/build_offline.py` | Standard-library Python export script |
-| `assets/` | Official SVG, shared icons and local Nunito Sans fonts |
+| `assets/` | Official logo, newly drawn rounded SVG icons and local Nunito Sans fonts |
+| `library.js` | Navigation components, state specimens and Figma coverage mapping |
+| `component-audit.json` | Read-only Figma library inventory dated 23 Nov 2026 |
 
 ## Edit and regenerate
 
@@ -76,3 +81,9 @@ Browser checks cover the 402 px phone layout, typography sizes/weights, form err
 The one-page overview is ready to copy into Jama, but has not been submitted. Cross-check the pattern list against the team's original Task 4 selections before final submission. Real-device and assistive-technology testing remain necessary for a production app.
 
 Brand artwork is the supplied `kid-dash-logo-transparent.svg`, preserved unchanged. Icons are exported from the existing Kiddash component library. Nunito Sans is distributed under the SIL Open Font License; see `assets/OFL.txt`.
+
+## Library coverage (v1.2)
+
+The site is not a pixel-for-pixel mirror of Figma. The four fictional portraits currently use initials. The campus and journey scenes are simplified web illustrations, and the two original route graphics have not been reproduced individually. Review boards are reference material; the expandable inline scanner is retired in favor of the dedicated scan flow. See **Component coverage** for the complete audit.
+
+The new icon artwork is used in this web guide only; the Figma file has not been edited by this update. The official supplied logo remains unchanged.

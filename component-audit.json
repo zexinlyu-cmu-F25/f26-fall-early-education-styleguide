@@ -1,0 +1,590 @@
+{
+  "auditedOn": "2026-11-23",
+  "fileKey": "7rW83A3evUKDuRe08XmO6A",
+  "id": "402:226",
+  "name": "Component library / All reusable assets",
+  "count": 71,
+  "items": [
+    {
+      "id": "5:3",
+      "name": "Kiddash 2026 / Direction for review",
+      "type": "FRAME"
+    },
+    {
+      "id": "11:2",
+      "name": "Asset / Fictional portrait atlas",
+      "type": "FRAME"
+    },
+    {
+      "id": "14:2",
+      "name": "Page introduction",
+      "type": "FRAME"
+    },
+    {
+      "id": "14:5",
+      "name": "Icon / Scan",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:10",
+      "name": "Icon / Map",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:14",
+      "name": "Icon / Pickup",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:21",
+      "name": "Icon / Chat",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:26",
+      "name": "Icon / Alerts",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:30",
+      "name": "Icon / Search",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:32",
+      "name": "Icon / Arrow",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:34",
+      "name": "Icon / Back",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:36",
+      "name": "Icon / Check",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:38",
+      "name": "Icon / Close",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:40",
+      "name": "Icon / Pin",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:42",
+      "name": "Icon / History",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:44",
+      "name": "Icon / QR",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:49",
+      "name": "Brand / Mark",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:52",
+      "name": "Photo / Justin",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:54",
+      "name": "Photo / Sofia",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:56",
+      "name": "Photo / Noah",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:58",
+      "name": "Photo / David",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:72",
+      "name": "Button",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:60",
+          "name": "Type=Primary, State=Default"
+        },
+        {
+          "id": "14:61",
+          "name": "Type=Primary, State=Pressed"
+        },
+        {
+          "id": "14:62",
+          "name": "Type=Primary, State=Disabled"
+        },
+        {
+          "id": "14:63",
+          "name": "Type=Primary, State=Loading"
+        },
+        {
+          "id": "14:64",
+          "name": "Type=Secondary, State=Default"
+        },
+        {
+          "id": "14:65",
+          "name": "Type=Secondary, State=Pressed"
+        },
+        {
+          "id": "14:66",
+          "name": "Type=Secondary, State=Disabled"
+        },
+        {
+          "id": "14:67",
+          "name": "Type=Secondary, State=Loading"
+        },
+        {
+          "id": "14:68",
+          "name": "Type=Tertiary, State=Default"
+        },
+        {
+          "id": "14:69",
+          "name": "Type=Tertiary, State=Pressed"
+        },
+        {
+          "id": "14:70",
+          "name": "Type=Tertiary, State=Disabled"
+        },
+        {
+          "id": "14:71",
+          "name": "Type=Tertiary, State=Loading"
+        }
+      ]
+    },
+    {
+      "id": "14:158",
+      "name": "Search",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:154",
+          "name": "State=Default"
+        },
+        {
+          "id": "14:155",
+          "name": "State=Focused"
+        },
+        {
+          "id": "14:156",
+          "name": "State=Filled"
+        },
+        {
+          "id": "14:157",
+          "name": "State=Disabled"
+        }
+      ]
+    },
+    {
+      "id": "14:183",
+      "name": "Chip / subtle",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:185",
+      "name": "Chip / successSoft",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:187",
+      "name": "Chip / attention",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:189",
+      "name": "Chip / warning",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:191",
+      "name": "Chip / info",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:193",
+      "name": "Attention card / Arrived",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:202",
+      "name": "Attention card / Message",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:211",
+      "name": "List row / Default",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:218",
+      "name": "List row / Arrival",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:225",
+      "name": "List row / History",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:232",
+      "name": "Teacher nav / Map",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:265",
+      "name": "Teacher nav / Pickup",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:298",
+      "name": "Teacher nav / Chat",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:331",
+      "name": "Teacher nav / Alerts",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:364",
+      "name": "Parent nav / Pickup",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:392",
+      "name": "Parent nav / Chat",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:420",
+      "name": "Parent nav / My code",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:448",
+      "name": "Scanner / Ready",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:452",
+      "name": "QR / Demo pickup pass",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:772",
+      "name": "Message / Incoming",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:775",
+      "name": "Message / Outgoing",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "14:778",
+      "name": "Library / Review board",
+      "type": "FRAME"
+    },
+    {
+      "id": "17:242",
+      "name": "Photo / Initials",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "17:246",
+      "name": "Campus map / Overview",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "17:269",
+      "name": "Campus map / Selected",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "17:293",
+      "name": "Route / North gate",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "23:230",
+      "name": "List row / Compact",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "23:237",
+      "name": "Route / School preview",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "43:497",
+      "name": "Approaching response",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "43:494",
+          "name": "State=Prompt"
+        },
+        {
+          "id": "43:495",
+          "name": "State=Ready"
+        },
+        {
+          "id": "43:496",
+          "name": "State=Wait"
+        }
+      ]
+    },
+    {
+      "id": "43:557",
+      "name": "Guardian match",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "43:553",
+          "name": "State=Default"
+        },
+        {
+          "id": "43:554",
+          "name": "State=Swipe right"
+        },
+        {
+          "id": "43:555",
+          "name": "State=Swipe left"
+        },
+        {
+          "id": "43:556",
+          "name": "State=Matched"
+        }
+      ]
+    },
+    {
+      "id": "43:958",
+      "name": "Scanner / Captured",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "43:1288",
+      "name": "Interaction library / Review",
+      "type": "FRAME"
+    },
+    {
+      "id": "79:1130",
+      "name": "Arrival status / Off",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "79:1140",
+      "name": "Review / Arrival sharing status",
+      "type": "FRAME"
+    },
+    {
+      "id": "93:1154",
+      "name": "Journey / Shared scene",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "93:1148",
+          "name": "State=Start"
+        },
+        {
+          "id": "93:1149",
+          "name": "State=Moving"
+        },
+        {
+          "id": "93:1150",
+          "name": "State=Near"
+        },
+        {
+          "id": "93:1151",
+          "name": "State=At gate"
+        },
+        {
+          "id": "93:1152",
+          "name": "State=Complete"
+        },
+        {
+          "id": "93:1153",
+          "name": "State=Manual"
+        }
+      ]
+    },
+    {
+      "id": "93:1392",
+      "name": "Activity / Child message",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "93:1400",
+      "name": "Handoff / Family pair",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "93:1411",
+      "name": "Scan / Expandable dock",
+      "type": "COMPONENT"
+    },
+    {
+      "id": "93:1421",
+      "name": "Scene library / Interaction rules",
+      "type": "FRAME"
+    },
+    {
+      "id": "199:1201",
+      "name": "Button / Scan",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "62:1198",
+          "name": "State=Default"
+        },
+        {
+          "id": "62:1201",
+          "name": "State=Pressed"
+        },
+        {
+          "id": "62:1204",
+          "name": "State=Disabled"
+        },
+        {
+          "id": "62:1207",
+          "name": "State=Loading"
+        }
+      ]
+    },
+    {
+      "id": "199:1205",
+      "name": "SmallButton / Soft",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:136",
+          "name": "State=Default"
+        },
+        {
+          "id": "199:1203",
+          "name": "State=Pressed"
+        }
+      ]
+    },
+    {
+      "id": "199:1209",
+      "name": "SmallButton / Outline",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:142",
+          "name": "State=Default"
+        },
+        {
+          "id": "199:1207",
+          "name": "State=Pressed"
+        }
+      ]
+    },
+    {
+      "id": "199:1213",
+      "name": "SmallButton / Plain",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:152",
+          "name": "State=Default"
+        },
+        {
+          "id": "199:1211",
+          "name": "State=Pressed"
+        }
+      ]
+    },
+    {
+      "id": "199:1229",
+      "name": "Count / Attention",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:171",
+          "name": "State=Default"
+        },
+        {
+          "id": "199:1217",
+          "name": "State=Pressed"
+        },
+        {
+          "id": "199:1223",
+          "name": "State=Selected"
+        }
+      ]
+    },
+    {
+      "id": "199:1245",
+      "name": "Count / Picked up",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:175",
+          "name": "State=Default"
+        },
+        {
+          "id": "199:1233",
+          "name": "State=Pressed"
+        },
+        {
+          "id": "199:1239",
+          "name": "State=Selected"
+        }
+      ]
+    },
+    {
+      "id": "199:1261",
+      "name": "Count / Remaining",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "14:179",
+          "name": "State=Default"
+        },
+        {
+          "id": "199:1249",
+          "name": "State=Pressed"
+        },
+        {
+          "id": "199:1255",
+          "name": "State=Selected"
+        }
+      ]
+    },
+    {
+      "id": "199:1270",
+      "name": "Journey action / Open row",
+      "type": "COMPONENT_SET",
+      "variants": [
+        {
+          "id": "93:1385",
+          "name": "State=Default"
+        },
+        {
+          "id": "199:1263",
+          "name": "State=Pressed"
+        }
+      ]
+    },
+    {
+      "id": "199:1272",
+      "name": "Buttons / Affordance review",
+      "type": "FRAME"
+    }
+  ]
+}
